@@ -3,9 +3,12 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Video from "../components/video";
+import MapComponent from '../components/map';
 
 const Writer = ({ data }) => {
-  const { title, body, image, videoId } = data.contentfulWriter;
+  const { title, body, image, videoId, locations: { internal: { content: locationsJSON }}} = data.contentfulWriter;
+  const locationsObj = JSON.parse(locationsJSON);
+  const locationsArray = Object.values(locationsObj);
   console.log(data.contentfulWriter);
   return (
     <Layout>
@@ -15,6 +18,7 @@ const Writer = ({ data }) => {
         <img alt={title} src={image.file.url} />
         <p className="body-text">{body.body}</p>
         <Video videoId={videoId}/>
+        <MapComponent locations={locationsArray}/>
         <Link to="/writers">Посмотреть других писателей</Link>
         <Link to="/">На главную</Link>
       </div>
@@ -36,6 +40,14 @@ export const pageQuery = graphql`
         }
       }
       videoId
+      locations {
+        internal {
+          content
+          description
+          ignoreType
+          mediaType
+        }
+      }
     }
   }
 `;
