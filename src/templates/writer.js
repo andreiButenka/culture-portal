@@ -2,9 +2,10 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Video from "../components/video";
 
 const Writer = ({ data }) => {
-  const { title, body, image } = data.contentfulWriter;
+  const { title, body, image, videoId } = data.contentfulWriter;
   console.log(data.contentfulWriter);
   return (
     <Layout>
@@ -13,6 +14,7 @@ const Writer = ({ data }) => {
         <h1>{title}</h1>
         <img alt={title} src={image.file.url} />
         <p className="body-text">{body.body}</p>
+        <Video videoId={videoId}/>
         <Link to="/writers">Посмотреть других писателей</Link>
         <Link to="/">На главную</Link>
       </div>
@@ -33,6 +35,7 @@ export const pageQuery = graphql`
           url
         }
       }
+      videoId
     }
   }
 `;
