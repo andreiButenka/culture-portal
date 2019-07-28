@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import YouTube from 'react-youtube';
 import ModalComponent from './modal';
+import Button from './button';
 import './video.css';
 
 const Video = ({ videoId }) => {
@@ -14,7 +15,7 @@ const Video = ({ videoId }) => {
   const videoContainer = (
     <div className='video-container'>
       <h2>Video</h2>
-      <button onClick={toggleModal}>Watch the video</button>
+      <Button clickHandler={toggleModal}>Watch the video</Button>
       <ModalComponent
         isOpen={modalWindowIsOpen}
         onRequestClose={toggleModal}
