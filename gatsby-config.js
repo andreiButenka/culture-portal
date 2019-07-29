@@ -1,9 +1,5 @@
 module.exports = {
-  siteMetadata: {
-    title: `Вот как-то так это будет выглядеть`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-  },
+  pathPrefix: `/gatsby-i18n/gatsby-starter-i18next`,
   plugins: [
     {
       resolve: `gatsby-source-contentful`,

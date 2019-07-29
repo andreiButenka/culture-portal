@@ -9,7 +9,7 @@ const Switcher = ({ changeLng, lng, availableLngs }) => (
       <li key={value} className="nav-lang-item">
         <button
           style={{
-            textDecoration: value === lng ? 'underline' : 'none',
+            background: value === lng ? 'grey' : ''
           }}
           className="btn btn-link"
           onClick={() => changeLng(value)}
