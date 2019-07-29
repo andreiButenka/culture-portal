@@ -10,8 +10,6 @@ import PropTypes from "prop-types"
 import { translate } from 'react-i18next';
 import { Head } from 'gatsby-plugin-i18next';
 
-import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import "./layout.css"
 
