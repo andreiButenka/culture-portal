@@ -6,9 +6,14 @@ import Video from "../components/video";
 import MapComponent from '../components/map';
 
 const Writer = ({ data }) => {
-  const { title, body, image, videoId, locations: { internal: { content: locationsJSON }}} = data.contentfulWriter;
-  const locationsObj = JSON.parse(locationsJSON);
-  const locationsArray = Object.values(locationsObj);
+  const { title, body, image, videoId, locations } = data.contentfulWriter;
+  let locationsArray = [];
+  if (locations) {
+    const { internal: { content: locationsJSON }} = locations;
+    const locationsObj = JSON.parse(locationsJSON);
+    locationsArray = Object.values(locationsObj);
+  }
+
   console.log(data.contentfulWriter);
   return (
     <Layout>

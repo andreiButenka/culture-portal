@@ -1,4 +1,4 @@
-import { YMaps, Map, Placemark, ZoomControl, FullscreenControl, GeolocationControl, TypeSelector, YMapsApi } from 'react-yandex-maps';
+import { YMaps, Map, Placemark, ZoomControl, FullscreenControl, TypeSelector } from 'react-yandex-maps';
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 
@@ -41,7 +41,6 @@ const MapComponent = ({ locations }) => {
           {coords.map((location) => <Placemark key={location} geometry={location}/>)}
           <ZoomControl/>
           <FullscreenControl/>
-          <GeolocationControl/>
           <TypeSelector/>
         </Map>
       </YMaps>
