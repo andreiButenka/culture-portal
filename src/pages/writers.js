@@ -1,28 +1,39 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
+import { I18n } from 'react-i18next';
+import { Link, withI18next } from 'gatsby-plugin-i18next';
+
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+
 const Writers = ({ data }) => {
   const writers = data.allContentfulWriter.edges;
   return (
-    <Layout>
-      <SEO title="Writers" />
-      <h1>{"Список писателей. Добавляются из админки CONTENTFUL"}</h1>
-      <div className="writers">
-        {writers.map(({ node: writer }) => (
-          <div key={writer.id}>
-            <Link to={`/writer/${writer.slug}`}>{writer.title}</Link>
+    <I18n>
+      {t => (
+        <Layout>
+          <SEO title="Writers" />
+          <h1>{t('WritersList')}</h1>
+          <div className="writers">
+            {writers.map(({ node: writer }) => (
+              <div key={writer.id}>
+                <Link to={`/writer/${writer.slug}`}>{writer.title}</Link>
+              </div>
+            ))}
+            <span className="mgBtm__24" />
+            <p>{t('description')}</p>
+            <Link to="/">{t('Go back to the homepage')}</Link>
           </div>
-        ))}
-        <span className="mgBtm__24" />
-        <Link to="/">На главную</Link>
-      </div>
-    </Layout>
+        </Layout>
+      )}
+    </I18n>
   );
 };
-export default Writers;
+
+export default withI18next()(Writers);
+
 export const query = graphql`
-  query WritersPageQuery {
+  query WritersPageQuery($lng: String!) {
     allContentfulWriter(limit: 1000) {
       edges {
         node {
@@ -39,6 +50,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    locales: allLocale(filter: {lng: {eq: $lng }, ns: {eq: "messages" } }) {
+      ...TranslationFragment
     }
   }
 `;

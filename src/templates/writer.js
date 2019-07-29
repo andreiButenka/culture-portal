@@ -1,5 +1,8 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
+import { I18n } from 'react-i18next';
+import { Link, withI18next } from 'gatsby-plugin-i18next';
+
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Video from "../components/video";
@@ -11,23 +14,30 @@ const Writer = ({ data }) => {
   const locationsArray = Object.values(locationsObj);
   console.log(data.contentfulWriter);
   return (
-    <Layout>
-      <SEO title={title} />
-      <div className="writer">
-        <h1>{title}</h1>
-        <img alt={title} src={image.file.url} />
-        <p className="body-text">{body.body}</p>
-        <Video videoId={videoId}/>
-        <MapComponent locations={locationsArray}/>
-        <Link to="/writers">Посмотреть других писателей</Link>
-        <Link to="/">На главную</Link>
-      </div>
-    </Layout>
+    <I18n>
+      {t => (
+        <Layout>
+          <SEO title={title} />
+          <div className="writer">
+            <h1>{title}</h1>
+            <img alt={title} src={image.file.url} />
+            <p className="body-text">{body.body}</p>
+            <p>{t('description')}</p>
+            <Video videoId={videoId}/>
+            <MapComponent locations={locationsArray}/>
+            <Link to="/writers/">{t('Writers')}</Link><br/>
+            <Link to="/">{t('Go back to the homepage')}</Link>
+          </div>
+        </Layout>
+      )}
+    </I18n>
   );
 };
-export default Writer;
+
+export default withI18next()(Writer);
+
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query($slug: String!, $lng: String!) {
     contentfulWriter(slug: { eq: $slug }) {
       title
       slug
@@ -48,6 +58,9 @@ export const pageQuery = graphql`
           mediaType
         }
       }
+    }
+    locales: allLocale(filter: {lng: {eq: $lng }, ns: {eq: "messages" } }) {
+      ...TranslationFragment
     }
   }
 `;

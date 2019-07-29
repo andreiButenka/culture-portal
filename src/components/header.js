@@ -1,6 +1,7 @@
-import { Link } from "gatsby"
+import { Link } from 'gatsby-plugin-i18next';
 import PropTypes from "prop-types"
 import React from "react"
+import LangSwitcher from './LangSwitcher';
 
 const Header = ({ siteTitle }) => (
   <header
@@ -9,6 +10,7 @@ const Header = ({ siteTitle }) => (
       marginBottom: `1.45rem`,
     }}
   >
+    <LangSwitcher />
     <div
       style={{
         margin: `0 auto`,
