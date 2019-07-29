@@ -13,7 +13,7 @@ import { Head } from 'gatsby-plugin-i18next';
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children, data, t }) => (
+const Layout = ({ children, t }) => (
     <>
       <Head hreflang>
         <title>{t('Site title')}</title>
