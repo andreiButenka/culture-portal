@@ -4,7 +4,6 @@ import { I18n } from 'react-i18next';
 import { Link, withI18next } from 'gatsby-plugin-i18next';
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 import Video from "../components/video";
 import MapComponent from '../components/map';
 
@@ -22,7 +21,6 @@ const Writer = ({ data }) => {
     <I18n>
       {t => (
         <Layout>
-          <SEO title={title} />
           <div className="writer">
             <h1>{title}</h1>
             <img alt={title} src={image.file.url} />

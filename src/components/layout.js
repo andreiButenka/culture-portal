@@ -7,25 +7,22 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import { translate } from 'react-i18next';
+import { Head } from 'gatsby-plugin-i18next';
+
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
+const Layout = ({ children, data, t }) => (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Head hreflang>
+        <title>{t('Site title')}</title>
+        <meta name="description" content="Sample" />
+        <meta name="keywords" content="Writers of Belarus, the Rolling Scope, CodeJam Culture Portal" />
+      </Head>
+      <Header siteTitle={t('Site title')} />
       <div
         style={{
           margin: `0 auto`,
@@ -42,11 +39,10 @@ const Layout = ({ children }) => {
         </footer>
       </div>
     </>
-  )
-}
+  );
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default translate()(Layout);

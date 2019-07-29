@@ -4,7 +4,6 @@ import { I18n } from 'react-i18next';
 import { Link, withI18next } from 'gatsby-plugin-i18next';
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 
 const Writers = ({ data }) => {
   const writers = data.allContentfulWriter.edges;
@@ -12,7 +11,6 @@ const Writers = ({ data }) => {
     <I18n>
       {t => (
         <Layout>
-          <SEO title="Writers" />
           <h1>{t('WritersList')}</h1>
           <div className="writers">
             {writers.map(({ node: writer }) => (

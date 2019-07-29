@@ -5,14 +5,12 @@ import { Link, withI18next } from 'gatsby-plugin-i18next';
 
 import Layout from "../components/layout";
 import Image from "../components/image";
-import SEO from "../components/seo";
 
 
 const IndexPage = () => (
   <I18n>
     {t => (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <div className="home">
           <h1>Team 8</h1>
           <p>culture-portal Alpha</p>
