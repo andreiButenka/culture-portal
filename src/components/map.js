@@ -68,7 +68,7 @@ const MapComponent = ({ locations }) => {
   const ADDRESS = 1;
 
   return (
-    coords.length &&
+    coords.length ?
     <div>
       <h2>Map</h2>
       <YMaps>
@@ -108,7 +108,7 @@ const MapComponent = ({ locations }) => {
           <TypeSelector/>
         </Map>
       </YMaps>
-    </div>
+    </div> : ''
   )
 };
 
