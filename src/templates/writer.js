@@ -6,9 +6,10 @@ import { Link, withI18next } from 'gatsby-plugin-i18next';
 import Layout from "../components/layout";
 import Video from "../components/video";
 import MapComponent from '../components/map';
+import Gallery from '../components/gallery';
 
 const Writer = ({ data }) => {
-  const { title, body, image, videoId, locations } = data.contentfulWriter;
+  const { title, body, image, videoId, locations, galleryPictures } = data.contentfulWriter;
   let locationsArray = [];
   if (locations) {
     const { internal: { content: locationsJSON }} = locations;
@@ -26,6 +27,7 @@ const Writer = ({ data }) => {
             <img alt={title} src={image.file.url} />
             <p className="body-text">{body.body}</p>
             <p>{t('description')}</p>
+            <Gallery galleryPictures={galleryPictures}/>
             <Video videoId={videoId}/>
             <MapComponent locations={locationsArray}/>
             <Link to="/writers/">{t('Writers')}</Link><br/>
@@ -60,6 +62,14 @@ export const pageQuery = graphql`
           ignoreType
           mediaType
         }
+      }
+      galleryPictures {
+        file {
+          url
+          fileName
+          contentType
+        }
+        description
       }
     }
     locales: allLocale(filter: {lng: {eq: $lng }, ns: {eq: "messages" } }) {

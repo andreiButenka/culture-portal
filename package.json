@@ -21,6 +21,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-modal": "^3.9.1",
+    "react-responsive-carousel": "^3.1.49",
     "react-yandex-maps": "^4.0.1",
     "react-youtube": "^7.9.0"
   },
