@@ -5,7 +5,6 @@ import { Link, withI18next } from 'gatsby-plugin-i18next';
 import SearchInput, {createFilter} from 'react-search-input';
 
 import Layout from "../components/layout";
-import "./writers.css";
 
 const KEYS_TO_FILTERS = ['node.title', 'node.city'];
 
