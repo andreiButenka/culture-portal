@@ -8,9 +8,10 @@ import Video from "../components/video";
 import MapComponent from '../components/map';
 import Gallery from '../components/gallery';
 import TimeLine from '../components/timeline';
+import Works from '../components/workslist';
 
 const Writer = ({ data }) => {
-  const { title, body, image, videoId, locations, galleryPictures, timeLine } = data.contentfulWriter;
+  const { title, body, image, videoId, locations, galleryPictures, timeLine, works } = data.contentfulWriter;
   let locationsArray = [];
   if (locations) {
     const { internal: { content: locationsJSON }} = locations;
@@ -28,6 +29,7 @@ const Writer = ({ data }) => {
             <img alt={title} src={image.file.url} />
             <p className="body-text">{body.body}</p>
             <p>{t('description')}</p>
+            <Works works={works}/>
             <Gallery galleryPictures={galleryPictures}/>
             <Video videoId={videoId}/>
             <TimeLine timeLine={timeLine}/>
@@ -78,6 +80,12 @@ export const pageQuery = graphql`
           key
           period
           action
+        }
+      }
+      works {
+        node {
+          work
+          period
         }
       }
     }
