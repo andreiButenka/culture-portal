@@ -5,6 +5,7 @@ import { Link, withI18next } from 'gatsby-plugin-i18next';
 import SearchInput, {createFilter} from 'react-search-input';
 
 import Layout from "../components/layout";
+import "./writers.css";
 
 const KEYS_TO_FILTERS = ['node.title', 'node.city'];
 
@@ -27,7 +28,7 @@ class Writers extends Component {
       <I18n>
         {t => (
           <Layout>
-            <h1>{t('WritersList')}</h1>
+            <h1 className="title">{t('WritersList')}</h1>
             <div className="writers">
             <SearchInput className="search-input" onChange={this.searchUpdated} 
             placeholder="Найди писателя по имени или по месту рождения" name="search-input"/>
@@ -51,7 +52,7 @@ class Writers extends Component {
   showNoMatchesMessage() {
     return  (
       <div>
-        Извините, нет совпадений
+        Извините, нет совпадений.
       </div>
     ) 
   }
@@ -60,7 +61,7 @@ class Writers extends Component {
     return (filteredWriters.map(({ node: writer }) => {
       return (
         <div key={writer.id}>
-          <Link to={`/writer/${writer.slug}`}>{writer.title}</Link>
+          <Link className="writers-item" to={`/writer/${writer.slug}`}>{writer.title}</Link>
         </div>
       )
     }))
