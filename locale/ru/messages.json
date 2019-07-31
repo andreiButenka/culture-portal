@@ -3,5 +3,7 @@
   "description": "Описание",
   "Go back to the homepage": "На главную",
   "Writers": "Писатели Беларуси",
-  "WritersList": "Список писателей"
+  "WritersList": "Список писателей",
+  "searhPlaceHolder": "Поиск писателя по имени или по месту рождения",
+  "noMatchesSearch": "Извините, по Вашему запросу ничего не найдено."
 }

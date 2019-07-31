@@ -3,5 +3,7 @@
   "description": "Апісанне",
   "Go back to the homepage": "На галоўную",
   "Writers": "Пісьменнікі Беларусі",
-  "WritersList": "Спіс пісьменнікаў"
+  "WritersList": "Спіс пісьменнікаў",
+  "searhPlaceHolder": "Пошук пісьменніка па імя або па месцы нараджэння",
+  "noMatchesSearch": "Выбачайце, па Вашым запыце нічога не знойдзена."
 }
