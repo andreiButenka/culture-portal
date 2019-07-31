@@ -1,20 +1,25 @@
 import React from "react";
+import { I18n } from 'react-i18next';
 import './workslist.css';
 
 const Works = ({ works }) => {
     return (
-      <table id="works">
-        <tr>
-          <th>Период</th>
-          <th>Произведение</th>
-        </tr>
-        {works.map(({ node: item }) => (
+      <I18n>
+      {t => (      
+        <table id="works">
           <tr>
-            <td>{item.period}</td>
-            <td>{item.work}</td>
+            <th>{t('workYear')}</th>
+            <th>{t('work')}</th>
           </tr>
-        ))}
-      </table>
+          {works.map(({ node: item }) => (
+            <tr>
+              <td>{item.period}</td>
+              <td>{item.work}</td>
+            </tr>
+          ))}
+        </table>
+      )}
+      </I18n>  
     );
   };
   export default Works;
