@@ -62,9 +62,11 @@ const Writer = ({ data, lng }) => {
             <img alt={content.title} src={image.file.url} />
             <p className="body-text">{content.body}</p>
             <p>{t('description')}</p>
+            <h2>{t('worksList')}</h2>
             <Works works={content.works}/>
             <Gallery galleryPictures={content.gallery}>{t('gallery')}</Gallery>
             <Video videoId={videoId}>{t('video')}</Video>
+            <h2>{t('biography')}</h2>
             <TimeLine timeLine={content.timeLine}/>
             <MapComponent locations={locationsArray}>{t('map')}</MapComponent>
             <Link to="/writers/">{t('Writers')}</Link><br/>

@@ -6,6 +6,10 @@
   "WritersList": "List of Writers",
   "searhPlaceHolder": "Search for a writer by name or place of birth",
   "noMatchesSearch": "Sorry, nothing was found by your request.",
+  "biography": "Biography",
+  "worksList": "List of Works",
+  "workYear": "Year",
+  "work": "Work",
   "gallery": "Gallery",
   "video": "Video",
   "map": "Map"
