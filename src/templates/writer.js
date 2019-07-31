@@ -11,7 +11,8 @@ import TimeLine from '../components/timeline';
 import Works from '../components/workslist';
 
 const Writer = ({ data, lng }) => {
-  const { titleRu, titleBy, titleEn, bodyRu, bodyBy, bodyEn, image, videoId, locations, galleryPictures, timeLineRu, timeLineBy, timeLineEn, worksRu, worksBy, worksEn } = data.contentfulWriter;
+  const { titleRu, titleBy, titleEn, bodyRu, bodyBy, bodyEn, image, videoId, locations, galleryPicturesRu, galleryPicturesBy,
+      galleryPicturesEn, timeLineRu, timeLineBy, timeLineEn, worksRu, worksBy, worksEn } = data.contentfulWriter;
   let locationsArray = [];
   if (locations) {
     const { internal: { content: locationsJSON }} = locations;
@@ -27,24 +28,29 @@ const Writer = ({ data, lng }) => {
         content.body = bodyRu.bodyRu;
         content.timeLine = timeLineRu;
         content.works = worksRu;
+        content.gallery = galleryPicturesRu;
       break;
     case 'by':
         content.title = titleBy;
         content.body = bodyBy.bodyBy;
         content.timeLine = timeLineBy;
         content.works = worksBy;
+        content.gallery = galleryPicturesBy;
       break;
     case 'en':
         content.title = titleEn;
         content.body = bodyEn.bodyEn;
         content.timeLine = timeLineEn;
         content.works = worksEn;
+        content.gallery = galleryPicturesEn;
       break;
     default:
       content.title = titleRu;
       content.body = bodyRu.bodyRu;
       content.timeLine = timeLineRu;
       content.works = worksRu;
+      content.gallery = galleryPicturesRu;
+      break;
     }
 
   return (
@@ -58,11 +64,11 @@ const Writer = ({ data, lng }) => {
             <p>{t('description')}</p>
             <h2>{t('worksList')}</h2>
             <Works works={content.works}/>
-            <Gallery galleryPictures={galleryPictures}/>
-            <Video videoId={videoId}/>
+            <Gallery galleryPictures={content.gallery}>{t('gallery')}</Gallery>
+            <Video videoId={videoId}>{t('video')}</Video>
             <h2>{t('biography')}</h2>
             <TimeLine timeLine={content.timeLine}/>
-            <MapComponent locations={locationsArray}/>
+            <MapComponent locations={locationsArray}>{t('map')}</MapComponent>
             <Link to="/writers/">{t('Writers')}</Link><br/>
             <Link to="/">{t('Go back to the homepage')}</Link>
           </div>
@@ -104,7 +110,23 @@ export const pageQuery = graphql`
           mediaType
         }
       }
-      galleryPictures {
+      galleryPicturesRu {
+        file {
+          url
+          fileName
+          contentType
+        }
+        description
+      }
+      galleryPicturesBy {
+        file {
+          url
+          fileName
+          contentType
+        }
+        description
+      }
+      galleryPicturesEn {
         file {
           url
           fileName

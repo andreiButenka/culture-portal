@@ -5,7 +5,7 @@ import ModalComponent from './modal';
 import Button from './button';
 import './video.css';
 
-const Video = ({ videoId }) => {
+const Video = ({ videoId, children }) => {
   const [modalWindowIsOpen, toggleModalWindow] = useState(false);
 
   const toggleModal = () => {
@@ -14,7 +14,7 @@ const Video = ({ videoId }) => {
 
   const videoContainer = (
     <div className='video-container'>
-      <h2>Video</h2>
+      <h2>{children}</h2>
       <Button clickHandler={toggleModal}>Watch the video</Button>
       <ModalComponent
         isOpen={modalWindowIsOpen}

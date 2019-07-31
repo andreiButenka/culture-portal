@@ -4,11 +4,11 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // style for carousel
 import './gallery.css';
 
-const Gallery = ({ galleryPictures }) => {
+const Gallery = ({ galleryPictures, children }) => {
 
   return (!galleryPictures || !galleryPictures.length ? '' :
     <div>
-      <h2>Gallery</h2>
+      <h2>{children}</h2>
       <Carousel infiniteLoop={true} width='700px' autoPlay={true}>
         {galleryPictures.map(({ file: { url }, description }) => {
           return (
