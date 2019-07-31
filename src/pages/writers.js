@@ -7,7 +7,10 @@ import SearchInput, {createFilter} from 'react-search-input';
 import Layout from "../components/layout";
 import "./writers.css";
 
-const KEYS_TO_FILTERS = ['node.title', 'node.city'];
+const KEYS_TO_FILTERS = [
+  'node.titleRu', 'node.titleBy', 'node.titleEn',
+  'node.cityRu', 'node.cityBy', 'node.cityEn'
+];
 
 class Writers extends Component {
   constructor (props) {
@@ -31,12 +34,11 @@ class Writers extends Component {
             <h1 className="title">{t('WritersList')}</h1>
             <div className="writers">
             <SearchInput className="search-input" onChange={this.searchUpdated} 
-            placeholder="Найди писателя по имени или по месту рождения" name="search-input"/>
+            placeholder={t('searhPlaceHolder')} name="search-input"/>
             {
               filteredWriters.length > 0 ? this.showFilteredWriters(filteredWriters) : this.showNoMatchesMessage()
             }
             <span className="mgBtm__24" />
-              <p>{t('description')}</p>
               <Link to="/">{t('Go back to the homepage')}</Link>
             </div>
           </Layout>
@@ -51,17 +53,33 @@ class Writers extends Component {
 
   showNoMatchesMessage() {
     return  (
-      <div>
-        Извините, нет совпадений.
-      </div>
+      <I18n>
+        {t => (
+          <div>{t('noMatchesSearch')}</div>
+        )}
+      </I18n>
     ) 
   }
 
   showFilteredWriters(filteredWriters) {
     return (filteredWriters.map(({ node: writer }) => {
+      const content = {};
+      switch (this.props.lng){
+        case 'ru':
+          content.title = writer.titleRu;
+          break;
+        case 'by':
+          content.title = writer.titleBy;
+          break;
+        case 'en':
+          content.title = writer.titleEn;
+          break;
+        default:
+          content.title = writer.titleRu;
+      }
       return (
         <div key={writer.id}>
-          <Link className="writers-item" to={`/writer/${writer.slug}`}>{writer.title}</Link>
+          <Link className="writers-item" to={`/writer/${writer.slug}`}>{content.title}</Link>
         </div>
       )
     }))
@@ -76,17 +94,13 @@ export const query = graphql`
       edges {
         node {
           id
-          title
+          titleRu
+          titleBy
+          titleEn
           slug
-          city
-          body {
-            body
-          }
-          image {
-            file {
-              url
-            }
-          }
+          cityRu
+          cityBy
+          cityEn
         }
       }
     }

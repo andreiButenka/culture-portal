@@ -3,5 +3,7 @@
   "description": "Description",
   "Go back to the homepage": "Go back to the homepage",
   "Writers": "Writers of Belarus",
-  "WritersList": "List of Writers"
+  "WritersList": "List of Writers",
+  "searhPlaceHolder": "Search for a writer by name or place of birth",
+  "noMatchesSearch": "Sorry, nothing was found by your request."
 }

@@ -10,13 +10,33 @@ import Gallery from '../components/gallery';
 import TimeLine from '../components/timeline';
 import Works from '../components/workslist';
 
-const Writer = ({ data }) => {
-  const { title, body, image, videoId, locations, galleryPictures, timeLine, works } = data.contentfulWriter;
+const Writer = ({ data, lng }) => {
+  const { titleRu, titleBy, titleEn, bodyRu, bodyBy, bodyEn, image, videoId, locations, galleryPictures, timeLine, works } = data.contentfulWriter;
   let locationsArray = [];
   if (locations) {
     const { internal: { content: locationsJSON }} = locations;
     const locationsObj = JSON.parse(locationsJSON);
     locationsArray = Object.values(locationsObj);
+  }
+  
+  const content = {};
+
+  switch(lng) {
+    case 'ru':
+        content.title = titleRu;
+        content.body = bodyRu.bodyRu;
+      break;
+    case 'by':
+        content.title = titleBy;
+        content.body = bodyBy.bodyBy;
+      break;
+    case 'en':
+        content.title = titleEn;
+        content.body = bodyEn.bodyEn;
+      break;
+    default:
+      content.title = titleRu;
+      content.body = bodyRu.bodyRu;
   }
 
   console.log(timeLine);
@@ -25,9 +45,9 @@ const Writer = ({ data }) => {
       {t => (
         <Layout>
           <div className="writer">
-            <h1>{title}</h1>
-            <img alt={title} src={image.file.url} />
-            <p className="body-text">{body.body}</p>
+            <h1>{content.title}</h1>
+            <img alt={content.title} src={image.file.url} />
+            <p className="body-text">{content.body}</p>
             <p>{t('description')}</p>
             <Works works={works}/>
             <Gallery galleryPictures={galleryPictures}/>
@@ -48,10 +68,18 @@ export default withI18next()(Writer);
 export const pageQuery = graphql`
   query($slug: String!, $lng: String!) {
     contentfulWriter(slug: { eq: $slug }) {
-      title
+      titleRu
+      titleBy
+      titleEn
       slug
-      body {
-        body
+      bodyRu {
+        bodyRu
+      }
+      bodyBy {
+        bodyBy
+      }
+      bodyEn {
+        bodyEn
       }
       image {
         file {
