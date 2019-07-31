@@ -5,5 +5,8 @@
   "Writers": "Writers of Belarus",
   "WritersList": "List of Writers",
   "searhPlaceHolder": "Search for a writer by name or place of birth",
-  "noMatchesSearch": "Sorry, nothing was found by your request."
+  "noMatchesSearch": "Sorry, nothing was found by your request.",
+  "gallery": "Gallery",
+  "video": "Video",
+  "map": "Map"
 }

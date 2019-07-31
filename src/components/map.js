@@ -2,7 +2,7 @@ import { YMaps, Map, Placemark, ZoomControl, FullscreenControl, TypeSelector,  }
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 
-const MapComponent = ({ locations }) => {
+const MapComponent = ({ locations, children }) => {
   const [coords, setCoords] = useState([]);
   const [balloonContext, setBalloonContext] = useState('Идет поиск...');
   const [clickedCoords, setClickedCoords] = useState([]);
@@ -70,7 +70,7 @@ const MapComponent = ({ locations }) => {
   return (
     coords.length ?
     <div>
-      <h2>Map</h2>
+      <h2>{children}</h2>
       <YMaps>
         <Map defaultState={{ center: coords[0], zoom: 16}} width='50vw' height={400}
              options={{maxZoom: 20, minZoom: 2}} onClick={handleClickMap}
