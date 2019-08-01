@@ -60,8 +60,10 @@ const Writer = ({ data, lng }) => {
           <div className="writer">
             <h1>{content.title}</h1>
             <img alt={content.title} src={image.file.url} />
-            <p className="body-text">{content.body}</p>
-            <p>{t('description')}</p>
+            <p className="body-text">
+              {t('LiveYears')}
+              <span style={{fontWeight: 'bold'}}>{content.body}</span>
+            </p>
             <h2>{t('worksList')}</h2>
             <Works works={content.works}/>
             <Gallery galleryPictures={content.gallery}>{t('gallery')}</Gallery>
