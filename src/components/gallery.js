@@ -9,10 +9,10 @@ const Gallery = ({ galleryPictures, children }) => {
   return (!galleryPictures || !galleryPictures.length ? '' :
     <div>
       <h2>{children}</h2>
-      <Carousel infiniteLoop={true} width='700px' autoPlay={true}>
+      <Carousel infiniteLoop={true} autoPlay={true} useKeyboardArrows={true} className='carousel-container'>
         {galleryPictures.map(({ file: { url }, description }) => {
           return (
-            <div key={`${description}+${url}`} className='carousel-container'>
+            <div key={`${description}+${url}`} className='gallery-container'>
               <img src={url} alt={description} className='gallery-img'/>
               <p className="legend">{description}</p>
             </div>
