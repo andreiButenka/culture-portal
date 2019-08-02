@@ -65,7 +65,7 @@ const Writer = ({ data, lng }) => {
               <span style={{fontWeight: 'bold'}}>{content.body}</span>
             </p>
             <h2>{t('worksList')}</h2>
-            <Works works={content.works}/>
+            <Works works={content.works} headYear={t('workYear')} headWork={t('work')}/>
             <Gallery galleryPictures={content.gallery}>{t('gallery')}</Gallery>
             <Video videoId={videoId}>{t('video')}</Video>
             <h2>{t('biography')}</h2>
