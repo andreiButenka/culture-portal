@@ -76,19 +76,23 @@ class Writers extends Component {
       switch (this.props.lng){
         case 'ru':
           content.title = writer.titleRu;
+          content.city = writer.cityRu;
           break;
         case 'by':
           content.title = writer.titleBy;
+          content.city = writer.cityBy;
           break;
         case 'en':
           content.title = writer.titleEn;
+          content.city = writer.cityEn;
           break;
         default:
           content.title = writer.titleRu;
+          content.city = writer.cityRu;
       }
       return (
         <div key={writer.id}>
-          <Link className="writers-item" to={`/writer/${writer.slug}`}>{content.title}</Link>
+          <Link className="writers-item" to={`/writer/${writer.slug}`}>{`${content.title} | ${content.city}`}</Link>
         </div>
       )
     }))
