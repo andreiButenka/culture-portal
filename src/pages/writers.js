@@ -7,11 +7,6 @@ import SearchInput, {createFilter} from 'react-search-input';
 import Layout from "../components/layout";
 import "./writers.css";
 
-const KEYS_TO_FILTERS = [
-  'node.titleRu', 'node.titleBy', 'node.titleEn',
-  'node.cityRu', 'node.cityBy', 'node.cityEn'
-];
-
 class Writers extends Component {
   constructor (props) {
     super(props)
@@ -24,6 +19,20 @@ class Writers extends Component {
   }
 
   render () {
+    let KEYS_TO_FILTERS = [];
+    switch (this.props.lng){
+      case 'ru':
+        KEYS_TO_FILTERS = ['node.titleRu', 'node.cityRu'];
+        break;
+      case 'by':
+        KEYS_TO_FILTERS = ['node.titleBy', 'node.cityBy'];
+        break;
+      case 'en':
+        KEYS_TO_FILTERS = ['node.titleEn', 'node.cityEn'];
+        break;
+      default:
+        KEYS_TO_FILTERS = ['node.titleRu', 'node.cityRu'];
+    }
     const writers = this.state.writers;
     const filteredWriters = writers.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
     
