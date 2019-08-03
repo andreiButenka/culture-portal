@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from 'gatsby';
 import { I18n } from 'react-i18next';
-import { Link, withI18next } from 'gatsby-plugin-i18next';
+import { withI18next } from 'gatsby-plugin-i18next';
 
 import Layout from "../components/layout";
 import Image from "../components/image";
@@ -25,7 +25,6 @@ const IndexPage = () => (
               <p>{t('description')}</p>
             </div>
           </div>
-          <Link to="/writers/">{t('Writers')}</Link>
         </div>
       </Layout>
     )}

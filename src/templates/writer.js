@@ -71,8 +71,6 @@ const Writer = ({ data, lng }) => {
             <h2>{t('biography')}</h2>
             <TimeLine timeLine={content.timeLine}/>
             <MapComponent locations={locationsArray}>{t('map')}</MapComponent>
-            <Link to="/writers/">{t('Writers')}</Link><br/>
-            <Link to="/">{t('Go back to the homepage')}</Link>
           </div>
         </Layout>
       )}

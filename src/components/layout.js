@@ -20,7 +20,7 @@ const Layout = ({ children, t }) => (
         <meta name="description" content="Sample" />
         <meta name="keywords" content="Writers of Belarus, the Rolling Scope, CodeJam Culture Portal" />
       </Head>
-      <Header siteTitle={t('Site title')} />
+      <Header siteTitle={t('Site title')} writersList={t('Go to writers list')} goBack={t('Go back to the homepage')}/>
       <div
         style={{
           margin: `0 auto`,

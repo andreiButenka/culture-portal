@@ -2,8 +2,9 @@ import { Link } from 'gatsby-plugin-i18next';
 import PropTypes from "prop-types"
 import React from "react"
 import LangSwitcher from './LangSwitcher';
+import './header.css';
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, writersList, goBack }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -11,34 +12,34 @@ const Header = ({ siteTitle }) => (
     }}
   >
     <LangSwitcher />
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+    <div>
+      <h1>
+        <Link to="/">
           {siteTitle}
         </Link>
       </h1>
+      <div className="nav">
+        <Link to="/">
+          {goBack}
+        </Link>        
+        <Link to="/writers/">
+          {writersList}
+        </Link>
+      </div>  
     </div>
   </header>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  writersList: PropTypes.string,
+  goBack: PropTypes.string,
 }
 
 Header.defaultProps = {
   siteTitle: ``,
+  writersList: ``,
+  goBack: ``,
 }
 
 export default Header

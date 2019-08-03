@@ -48,7 +48,6 @@ class Writers extends Component {
               filteredWriters.length > 0 ? this.showFilteredWriters(filteredWriters) : this.showNoMatchesMessage()
             }
             <span className="mgBtm__24" />
-              <Link to="/">{t('Go back to the homepage')}</Link>
             </div>
           </Layout>
         )}
