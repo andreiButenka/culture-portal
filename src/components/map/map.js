@@ -1,6 +1,7 @@
 import { YMaps, Map, Placemark, ZoomControl, FullscreenControl, TypeSelector,  } from 'react-yandex-maps';
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
+import './map.css';
 
 const MapComponent = ({ locations, children }) => {
   const [coords, setCoords] = useState([]);
