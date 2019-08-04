@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 
 
 import Layout from "../components/layout";
+import Team from "../components/team";
 
 const useStyles = makeStyles({
   card: {
@@ -75,25 +76,26 @@ const IndexPage = ({ data, lng }) => {
             </div>
             <div>
               <p>{t('WriterOfTheDay')}</p>
-                <Link to={`/writer/${defineWriter.node.slug}`}>
-                  <Card className={classes.card}>
-                    <CardActionArea>
-                      <CardMedia
-                        className={classes.media}
-                        image={defineWriter.node.image.file.url}
-                      />
-                      <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2"> 
-                            {writer.title}
-                          </Typography> 
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            {writer.body}
-                          </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    </Card>
-                  </Link>
+              <Link to={`/writer/${defineWriter.node.slug}`}>
+                <Card className={classes.card}>
+                  <CardActionArea>
+                    <CardMedia
+                      className={classes.media}
+                      image={defineWriter.node.image.file.url}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2"> 
+                        {writer.title}
+                      </Typography> 
+                      <Typography variant="body2" color="textSecondary" component="p">
+                        {writer.body}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Link>
             </div>
+            <Team/>
           </div>
         </Layout>
       )}
