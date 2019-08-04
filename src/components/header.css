@@ -1,6 +1,5 @@
 header{
     padding: 10px;
-    height: 20vh;
 }
 header a{
     color: white;
@@ -35,4 +34,13 @@ header a{
      inset rgba(0,0,0,.8) 0 1px 2px,
      inset rgba(0,0,0,.05) 0 -1px 0,
      #fff 0 1px 1px;
+}
+@media only screen and (max-width: 768px){
+    header h1 {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+    }
+    .nav a {
+        padding: 3px;
+    }
 }

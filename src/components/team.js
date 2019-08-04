@@ -21,7 +21,7 @@ class Team extends React.PureComponent {
                         </div>
                     </div>
                 </div>
-                <p>Dmitriy Garkusha</p>
+                <div>Dmitriy Garkusha</div>
                 <a href="https://github.com/yoyq" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-alt"/></a>
             </div>
             <div>
