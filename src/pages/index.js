@@ -26,28 +26,41 @@ const IndexPage = ({ data, lng }) => {
   const classes = useStyles();
 
   const writers = data.allContentfulWriter.edges;
+  const description = data.allContentfulDescription.edges[0];
+  console.log(description);
+
   const defineWriter = writers.find(el => el.node.authotOfTheDay === true);
+  const { descrTitleRu, descrTitleBy, descrTitleEn, descrBodyRu, descrBodyBy, descrBodyEn } = description.node;
 
   const { titleRu, titleBy, titleEn, bodyRu, bodyBy, bodyEn } = defineWriter.node;
 
   const writer = {};
+  const descr = {};
 
   switch(lng) {
     case 'ru':
       writer.title = titleRu;
       writer.body = bodyRu.bodyRu;
+      descr.title = descrTitleRu;
+      descr.body = descrBodyRu.descrBodyRu;
       break;
     case 'by':
       writer.title = titleBy;
       writer.body = bodyBy.bodyBy;
+      descr.title = descrTitleBy;
+      descr.body = descrBodyBy.descrBodyBy;
       break;
     case 'en':
       writer.title = titleEn;
       writer.body = bodyEn.bodyEn;
+      descr.title = descrTitleEn;
+      descr.body = descrBodyEn.descrBodyEn;
       break;
     default:
       writer.title = titleRu;
       writer.body = bodyRu.bodyRu;
+      descr.title = descrTitleRu;
+      descr.body = descrBodyRu.descrBodyRu;
       break;
   }
 
@@ -56,8 +69,10 @@ const IndexPage = ({ data, lng }) => {
       {t => (
         <Layout>
           <div className="home">
-            <h1>Team 8</h1>
-            <p>culture-portal Alpha</p>
+            <div>
+              <h2>{descr.title}</h2>
+              <div>{descr.body}</div>
+            </div>
             <div>
               <p>{t('WriterOfTheDay')}</p>
                 <Link to={`/writer/${defineWriter.node.slug}`}>
@@ -89,7 +104,7 @@ const IndexPage = ({ data, lng }) => {
 export default withI18next()(IndexPage);
 
 export const query = graphql`
-  query WritersOfTheDay($lng: String!) {
+  query MainPageQuery($lng: String!) {
     allContentfulWriter(limit: 1000) {
       edges {
         node {
@@ -115,6 +130,24 @@ export const query = graphql`
         }
       }
     }
+    allContentfulDescription {
+      edges {
+        node {
+          descrBodyBy {
+            descrBodyBy
+          }
+          descrBodyEn {
+            descrBodyEn
+          }
+          descrBodyRu {
+            descrBodyRu
+          }
+          descrTitleBy
+          descrTitleEn
+          descrTitleRu
+        }
+      }
+    } 
     locales: allLocale(filter: {lng: {eq: $lng }, ns: {eq: "messages" } }) {
       ...TranslationFragment
     }
