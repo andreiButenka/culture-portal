@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import { translate } from 'react-i18next';
 import { Head } from 'gatsby-plugin-i18next';
 
-import Header from "./header"
+import Header from "./header";
+import Footer from './footer/footer';
 import "./layout.css"
 
 const Layout = ({ children, t }) => (
@@ -30,12 +31,8 @@ const Layout = ({ children, t }) => (
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
+      <Footer />
     </>
   );
 
