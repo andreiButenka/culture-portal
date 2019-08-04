@@ -9,6 +9,9 @@
     height: 450px;
 }
 
+.thumbs {
+    margin: 0 auto;
+}
 .thumb {
     height: 50px;
 }

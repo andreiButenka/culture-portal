@@ -4,11 +4,11 @@ import { I18n } from 'react-i18next';
 import { Link, withI18next } from 'gatsby-plugin-i18next';
 
 import Layout from "../components/layout";
-import Video from "../components/video";
-import MapComponent from '../components/map';
-import Gallery from '../components/gallery';
-import TimeLine from '../components/timeline';
-import Works from '../components/workslist';
+import Video from "../components/video/video";
+import MapComponent from '../components/map/map';
+import Gallery from '../components/gallery/gallery';
+import TimeLine from '../components/timeline/timeline';
+import Works from '../components/workslist/workslist';
 
 const Writer = ({ data, lng }) => {
   const { titleRu, titleBy, titleEn, bodyRu, bodyBy, bodyEn, image, videoId, locations, galleryPicturesRu, galleryPicturesBy,
