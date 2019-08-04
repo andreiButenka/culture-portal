@@ -1,41 +1,76 @@
 .team {
-    display: flex;
+  display: flex;
+  background-color: #202020;
+  width: 100.1%;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  height: 300px;
+}
+.team a {
+  color: white;
+  font-size: 1.7rem;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  padding: 10px;
+  outline: none;
+  border-radius: 2px;
+  margin-top: 5px;
+} 
+.team a:before {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.team a:hover {
+  background: rgba(0,0,0,.2);
+  box-shadow:
+   inset rgba(0,0,0,.5) 0 -1px 1px,
+   inset rgba(0,0,0,.2) 0 1px,
+   rgba(0,0,0,.2) 0 1px 1px;
+}
+.team a:active {
+  background: rgba(0,0,0,.3);
+  box-shadow:
+   inset rgba(0,0,0,.8) 0 1px 2px,
+   inset rgba(0,0,0,.05) 0 -1px 0,
+   #fff 0 1px 1px;
 }
 .team__flipBox {
-    background-color: transparent;
-    width: 200px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px;
-    overflow: hidden;
-  }
+  background-color: transparent;
+  width: 170px;
+  height: 170px;
+  perspective: 1000px;
+  overflow: hidden;
+}
   
-  .team__flipBox-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
+.team__flipBox-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
   
-  .team__flipBox:hover .team__flipBox-inner {
-    transform: rotateY(180deg);
-  }
+.team__flipBox:hover .team__flipBox-inner {
+  transform: rotateY(180deg);
+}
   
-  .team__flipBox-front, .team__flipBox-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
+.team__flipBox-front, .team__flipBox-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
   
-  .team__flipBox-front img{
-    width: 100%;
-  }
+.team__flipBox-front img{
+  width: 100%;
+}
   
-  .team__flipBox-back {
-    background-color: dodgerblue;
-    color: white;
-    transform: rotateY(180deg);
-  }
+.team__flipBox-back {
+  color: #BEBEBE;
+  color: white;
+  transform: rotateY(180deg);
+}

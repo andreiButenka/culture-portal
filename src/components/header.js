@@ -7,8 +7,9 @@ import './header.css';
 const Header = ({ siteTitle, writersList, goBack }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `rgba(32,32,32,0.9)`,
+      margin: `0 auto`,
+      maxWidth: 960,
     }}
   >
     <LangSwitcher />

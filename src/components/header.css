@@ -1,5 +1,6 @@
 header{
     padding: 10px;
+    height: 20vh;
 }
 header a{
     color: white;
@@ -22,14 +23,14 @@ header a{
     padding-right: 5px;
 }
 .nav a:hover {
-    background: rgba(0,0,0,.1);
+    background: rgba(0,0,0,.2);
     box-shadow:
      inset rgba(0,0,0,.5) 0 -1px 1px,
      inset rgba(0,0,0,.2) 0 1px,
      rgba(0,0,0,.2) 0 1px 1px;
 }
 .nav a:active {
-    background: rgba(0,0,0,.2);
+    background: rgba(0,0,0,.3);
     box-shadow:
      inset rgba(0,0,0,.8) 0 1px 2px,
      inset rgba(0,0,0,.05) 0 -1px 0,
