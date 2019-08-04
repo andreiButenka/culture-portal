@@ -1,0 +1,41 @@
+.team {
+    display: flex;
+}
+.team__flipBox {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    overflow: hidden;
+  }
+  
+  .team__flipBox-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .team__flipBox:hover .team__flipBox-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .team__flipBox-front, .team__flipBox-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .team__flipBox-front img{
+    width: 100%;
+  }
+  
+  .team__flipBox-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }

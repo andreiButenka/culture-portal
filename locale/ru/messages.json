@@ -2,6 +2,7 @@
   "Site title": "Писатели Беларуси",
   "description": "Описание",
   "Go back to the homepage": "На главную",
+  "Go to writers list": "К списку писателей",
   "Writers": "Писатели Беларуси",
   "WritersList": "Список писателей",
   "searhPlaceHolder": "имя | место рождения",
@@ -14,5 +15,6 @@
   "gallery": "Галерея",
   "video": "Видео",
   "WatchVideo": "Смотреть видео",
-  "map": "Карта"
+  "map": "Карта",
+  "WriterOfTheDay": "Писатель дня"
 }
