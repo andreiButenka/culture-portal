@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  color: #BEBEBE;
+  background-color: #333333;
+}
+
+.footer span {
+  margin-right: 20px;
+}
+
+.footer-link {
+  display: block;
+  text-decoration: none;
+  color: #BEBEBE;
+  transition: all 0.2s;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+.footer-link:focus {
+  outline: none;
+}
