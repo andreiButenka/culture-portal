@@ -1,0 +1,13 @@
+.writer-title {
+  padding-top: 50px;
+}
+
+.body-text {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 500px) { 
+  .body-text {
+    font-size: 10px;
+  }
+}

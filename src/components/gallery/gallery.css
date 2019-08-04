@@ -1,0 +1,27 @@
+.carousel-container {
+  width: 400px;
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery-container {
+  height: 450px;
+  overflow: hidden;
+}
+
+.carousel .thumbs {
+  position: relative;
+  left: -0.60rem;
+  margin-left: 1.45rem;
+}
+
+.carousel .thumb {
+  margin-right: 5px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.carousel .thumb:last-child {
+    margin-right: 0;
+}
