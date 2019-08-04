@@ -7,89 +7,91 @@ class Team extends React.PureComponent {
     return (
         <div className="team">
             <div>                
-                <div class="team__flipBox">
-                    <div class="team__flipBox-inner">
-                        <div class="team__flipBox-front">
-                            <img src="https://cdn.discordapp.com/attachments/603511536203464710/607144345010700310/2016-08-27_10.10.40.jpg"/>
+                <div className="team__flipBox">
+                    <div className="team__flipBox-inner">
+                        <div className="team__flipBox-front">
+                            <img src="https://cdn.discordapp.com/attachments/603511536203464710/607144345010700310/2016-08-27_10.10.40.jpg" alt="Dmitriy Garkusha"/>
                         </div>
-                        <div class="team__flipBox-back">
+                        <div className="team__flipBox-back">
                             <ul>
-                                <li>Я всякое сделал</li>
-                                <li></li>
+                                <li>video and modal component</li>
+                                <li>map component</li>
+                                <li>gallery component</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <p>Dmitriy Garkusha</p>
-                <a href="https://github.com/yoyq" target="_blank">ссылка</a>
+                <a href="https://github.com/yoyq" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-alt"/></a>
             </div>
             <div>
-                <div class="team__flipBox">
-                    <div class="team__flipBox-inner">
-                        <div class="team__flipBox-front">
-                            <img src="https://cdn.discordapp.com/attachments/603511536203464710/606880535930863617/IMG_20160823_182631.jpg" />                        
+                <div className="team__flipBox">
+                    <div className="team__flipBox-inner">
+                        <div className="team__flipBox-front">
+                            <img src="https://cdn.discordapp.com/attachments/603511536203464710/606880535930863617/IMG_20160823_182631.jpg" alt="Andrei Butenka"/>
                         </div>
-                        <div class="team__flipBox-back">
+                        <div className="team__flipBox-back">
                             <ul>
-                                <li>Я всякое сделал</li>
-                                <li></li>
+                                <li>create base structure of the project</li>
+                                <li>writers base page</li>
+                                <li>search widget to writers page</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div>Andrei Butenka</div>
-                <a href="https://github.com/andreibutenka" target="_blank">ссылка</a>
+                <a href="https://github.com/andreibutenka" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-alt"/></a>
             </div>
             <div>
-                <div class="team__flipBox">
-                    <div class="team__flipBox-inner">
-                        <div class="team__flipBox-front">
-                        <img src="https://cdn.discordapp.com/attachments/603511536203464710/606835358944067584/ASI.jpg" />                        
+                <div className="team__flipBox">
+                    <div className="team__flipBox-inner">
+                        <div className="team__flipBox-front">
+                        <img src="https://cdn.discordapp.com/attachments/603511536203464710/606835358944067584/ASI.jpg" alt="Siarhei Akulich"/>                        
                         </div>
-                        <div class="team__flipBox-back">
+                        <div className="team__flipBox-back">
                             <ul>
-                                <li>Я всякое сделал</li>
-                                <li></li>
+                                <li>create base structure of the project</li>
+                                <li>writers base page</li>
+                                <li>search widget to writers page</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div>Siarhei Akulich</div>
-                <a href="https://github.com/asigithub" target="_blank">ccskrf</a>
+                <a href="https://github.com/asigithub" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-alt"/></a>
             </div>
             <div>
-            <div class="team__flipBox">
-                    <div class="team__flipBox-inner">
-                        <div class="team__flipBox-front">
-                        <img src="https://cdn.discordapp.com/attachments/603511536203464710/606835002545537024/avatar.jpg" />
+            <div className="team__flipBox">
+                    <div className="team__flipBox-inner">
+                        <div className="team__flipBox-front">
+                        <img src="https://cdn.discordapp.com/attachments/603511536203464710/606835002545537024/avatar.jpg" alt="Aliaksandr Sitnikau"/>
                         </div>
-                        <div class="team__flipBox-back">
+                        <div className="team__flipBox-back">
                             <ul>
-                                <li>Я всякое сделал</li>
-                                <li></li>
+                                <li>Language switch component</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div>Aliaksandr Sitnikau</div>
-                <a href="https://github.com/djspawnbrest" target="_blank">ccskrf</a>
+                <a href="https://github.com/djspawnbrest" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-alt"/></a>
             </div>
             <div>
-                <div class="team__flipBox">
-                    <div class="team__flipBox-inner">
-                        <div class="team__flipBox-front">
-                        <img src="https://pp.userapi.com/c840122/v840122243/3f5a7/SdetYKGPmC0.jpg" />
+                <div className="team__flipBox">
+                    <div className="team__flipBox-inner">
+                        <div className="team__flipBox-front">
+                        <img src="https://pp.userapi.com/c840122/v840122243/3f5a7/SdetYKGPmC0.jpg" alt="Aleksandra Kovaliova"/>
                         </div>
-                        <div class="team__flipBox-back">
+                        <div className="team__flipBox-back">
                             <ul>
-                                <li>Я всякое сделал</li>
-                                <li></li>
+                                <li>main page</li>
+                                <li>style</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div>Aleksandra Kovaliova</div>
-                <a href="https://github.com/Toffifi" target="_blank">ccskrf</a>
+                <a href="https://github.com/Toffifi" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-alt"/></a>
             </div>
         </div>
 

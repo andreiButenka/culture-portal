@@ -16,7 +16,8 @@ import Team from "../components/team";
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 450,
+    maxWidth: 550,
+    marginLeft: 'auto',
   },
   media: {
     height: 200,
@@ -28,7 +29,6 @@ const IndexPage = ({ data, lng }) => {
 
   const writers = data.allContentfulWriter.edges;
   const description = data.allContentfulDescription.edges[0];
-  console.log(description);
 
   const defineWriter = writers.find(el => el.node.authotOfTheDay === true);
   const { descrTitleRu, descrTitleBy, descrTitleEn, descrBodyRu, descrBodyBy, descrBodyEn } = description.node;
@@ -70,12 +70,12 @@ const IndexPage = ({ data, lng }) => {
       {t => (
         <Layout>
           <div className="home">
-            <div>
+            <div className="descr">
               <h2>{descr.title}</h2>
               <div>{descr.body}</div>
             </div>
-            <div>
-              <p>{t('WriterOfTheDay')}</p>
+            <div className="writerOfTheDay">
+              <h2>{t('WriterOfTheDay')}</h2>
               <Link to={`/writer/${defineWriter.node.slug}`}>
                 <Card className={classes.card}>
                   <CardActionArea>

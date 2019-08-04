@@ -14,7 +14,6 @@ const Gallery = ({ galleryPictures, children }) => {
           return (
             <div key={`${description}+${url}`} className='gallery-container'>
               <img src={url} alt={description} className='gallery-img'/>
-              <p className="legend">{description}</p>
             </div>
           );
         })}

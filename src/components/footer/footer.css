@@ -1,10 +1,12 @@
 .footer {
+  max-width: 960px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40px;
   color: #BEBEBE;
-  background-color: #333333;
+  border-right: 4px solid #202020;
 }
 
 .footer span {
