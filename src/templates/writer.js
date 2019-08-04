@@ -9,6 +9,7 @@ import MapComponent from '../components/map/map';
 import Gallery from '../components/gallery/gallery';
 import TimeLine from '../components/timeline/timeline';
 import Works from '../components/workslist/workslist';
+import './writer.css';
 
 const Writer = ({ data, lng }) => {
   const { titleRu, titleBy, titleEn, bodyRu, bodyBy, bodyEn, image, videoId, locations, galleryPicturesRu, galleryPicturesBy,
@@ -58,7 +59,7 @@ const Writer = ({ data, lng }) => {
       {t => (
         <Layout>
           <div className="writer">
-            <h1>{content.title}</h1>
+            <h1 className="writer-title">{content.title}</h1>
             <img alt={content.title} src={image.file.url} />
             <p className="body-text">
               {t('LiveYears')}
