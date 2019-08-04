@@ -72,7 +72,7 @@ const MapComponent = ({ locations, children }) => {
     coords.length ?
     <div>
       <h2>{children}</h2>
-      <div class='map-container'>
+      <div className='map-container'>
         <YMaps>
           <Map defaultState={{ center: coords[0], zoom: 16}} width='50vw' height={400}
               options={{maxZoom: 20, minZoom: 2}} onClick={handleClickMap}

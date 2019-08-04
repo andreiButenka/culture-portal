@@ -43,7 +43,7 @@ const Works = ({ works, headYear, headWork }) => {
       <Paper className={classes.root}>
         <Table className={classes.table}>
           <TableHead>
-            <TableRow backgroundColor="green">
+            <TableRow backgroundcolor="green">
               <StyledTableCell align="center">{headYear}</StyledTableCell>
               <StyledTableCell>{headWork}</StyledTableCell>
             </TableRow>
