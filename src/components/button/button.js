@@ -14,7 +14,8 @@ Button.propTypes = {
 
 Button.defaultProps = {
   style: {
-    width: '40%',
+    width: '60%',
+    maxWidth: '312px',
     height: '50px',
     color: '#2B2C2B',
     borderRadius: '5px',
