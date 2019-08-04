@@ -8,7 +8,7 @@
 | 2h | create base structure of the project  |
 | 1h | create public github repository and branches  |
 | 2h | add Contentful cms to the project |
-| 1h | add writers base page |
+| 2h | add writers base page |
 | 2h | add writer's page base template |
 | 2h | add search widget to writers page |
 | 1h | add footer component |
@@ -48,7 +48,7 @@
 ### Team 8
 | Total time spent|  
 | ------ | 
-| 3h |   
+| 70h |   
 
 ### self test
 
