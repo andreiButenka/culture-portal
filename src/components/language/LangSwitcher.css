@@ -33,3 +33,11 @@
 .btn-link {
     cursor: pointer;
 }
+@media only screen and (max-width: 768px){
+    .nav-lang-chooser{
+        margin-left: 0;
+    }
+    .btn-link {
+        padding: 0.01rem 0.2rem;
+    }
+}
