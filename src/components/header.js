@@ -1,7 +1,7 @@
 import { Link } from 'gatsby-plugin-i18next';
 import PropTypes from "prop-types"
 import React from "react"
-import LangSwitcher from './LangSwitcher';
+import LangSwitcher from './language/LangSwitcher';
 import './header.css';
 
 const Header = ({ siteTitle, writersList, goBack }) => (
